@@ -137,9 +137,11 @@ public class MedicoDB extends Database{
 
             while(result.next()){
                 Medico medico = new Medico(result.getString("nomeMedico"),result.getString("cpf"), result.getString("telefone"),result.getFloat("Salario"),result.getInt("idadeMedico"));
+                medico.setEspecialidade(result.getString("Especialidade"));
                 System.out.println("Nome: " + medico.getNome());
                 System.out.println("CPF: " + medico.getCpf());
                 System.out.println("idade: "+medico.getIdade());
+                System.out.println("Especialidade: "+medico.especialidade);
                 System.out.println("------------------------------------------------");
                 medicoList.add(medico);
             }
